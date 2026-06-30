@@ -34,7 +34,7 @@ function SocialLink({
 function ContactRow({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
     <li className="flex gap-3 text-sm">
-      <span className="shrink-0 mt-0.5 text-[#e09f3e]">{icon}</span>
+      <span className="shrink-0 mt-0.5 text-amber-500">{icon}</span>
       <span>{children}</span>
     </li>
   );
@@ -44,26 +44,26 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1b263b] text-white/75">
+    <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-16 py-14 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4" aria-label="Syawal Property">
-              <span className="inline-flex w-8 h-8 rounded-[4px] bg-[#e09f3e] items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <rect x="2" y="10" width="5" height="6" fill="#1b263b" />
-                  <rect x="7" y="7" width="4" height="9" fill="#1b263b" />
-                  <rect x="11" y="4" width="5" height="12" fill="#1b263b" />
-                  <rect x="2" y="8" width="14" height="1.5" fill="#1b263b" />
+            <Link href="/" className="flex items-center gap-2 mb-4 group" aria-label="Syawal Property">
+              <span className="inline-flex w-10 h-10 rounded-xl bg-amber-500 items-center justify-center shrink-0 group-hover:bg-amber-400 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true" className="text-slate-900">
+                  <rect x="2" y="10" width="5" height="6" fill="currentColor" />
+                  <rect x="7" y="7" width="4" height="9" fill="currentColor" />
+                  <rect x="11" y="4" width="5" height="12" fill="currentColor" />
+                  <rect x="2" y="8" width="14" height="1.5" fill="currentColor" />
                 </svg>
               </span>
-              <span className="font-heading font-bold text-white text-lg tracking-tight">
-                Syawal<span className="text-[#e09f3e]">Property</span>
+              <span className="font-heading font-bold text-white text-xl tracking-tight">
+                Syawal<span className="text-amber-500 group-hover:text-amber-400 transition-colors">Property</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-6 font-medium">
               Kontraktor dan developer properti terpercaya dengan pengalaman lebih dari 15 tahun membangun infrastruktur berkualitas tinggi di seluruh Indonesia.
             </p>
             <div className="flex gap-3">
@@ -88,8 +88,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="text-sm flex items-center gap-2 hover:text-[#e09f3e] transition-colors">
-                    <span className="inline-block w-1.5 h-1.5 bg-[#e09f3e] shrink-0" aria-hidden="true" />
+                  <Link href={href} className="text-sm flex items-center gap-2 text-slate-300 hover:text-amber-500 transition-colors group">
+                    <span className="inline-block w-1.5 h-1.5 bg-amber-500 rounded-full shrink-0 group-hover:scale-125 transition-transform" aria-hidden="true" />
                     {label}
                   </Link>
                 </li>
@@ -104,8 +104,8 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               {FOOTER_SERVICES.map((s) => (
-                <li key={s} className="text-sm flex items-center gap-2">
-                  <span className="inline-block w-1.5 h-1.5 bg-[#415a77] shrink-0" aria-hidden="true" />
+                <li key={s} className="text-sm flex items-center gap-2 text-slate-300">
+                  <span className="inline-block w-1.5 h-1.5 bg-slate-600 rounded-full shrink-0" aria-hidden="true" />
                   {s}
                 </li>
               ))}
@@ -117,15 +117,15 @@ export default function Footer() {
             <h3 className="font-heading text-white font-semibold text-xs tracking-widest uppercase mb-5">
               Kontak
             </h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4 text-slate-300">
               <ContactRow icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>}>
                 {ADDRESS}
               </ContactRow>
               <ContactRow icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>}>
-                <a href={`tel:${PHONE.replace(/\s|-/g, "")}`} className="hover:text-[#e09f3e] transition-colors">{PHONE}</a>
+                <a href={`tel:${PHONE.replace(/\s|-/g, "")}`} className="hover:text-amber-500 transition-colors">{PHONE}</a>
               </ContactRow>
               <ContactRow icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>}>
-                <a href={`mailto:${EMAIL}`} className="hover:text-[#e09f3e] transition-colors">{EMAIL}</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-amber-500 transition-colors">{EMAIL}</a>
               </ContactRow>
             </ul>
           </div>

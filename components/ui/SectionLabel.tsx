@@ -9,11 +9,12 @@ export default function SectionLabel({
 }) {
   return (
     <p
-      className={`font-body text-[10px] font-bold tracking-[0.15em] uppercase mb-3 ${
-        light ? "text-[#e09f3e]" : "text-[#835500]"
+      className={`font-body text-[10px] font-bold tracking-[0.15em] uppercase mb-4 flex items-center gap-2 ${
+        light ? "text-amber-400" : "text-amber-600"
       }`}
     >
-      ■ {children}
+      <span className="inline-block w-2 h-2 bg-current opacity-70" aria-hidden="true" />
+      {children}
     </p>
   );
 }

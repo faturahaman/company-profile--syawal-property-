@@ -17,23 +17,26 @@ interface CtaBannerProps {
 
 export default function CtaBanner({ heading, body, actions }: CtaBannerProps) {
   return (
-    <section className="relative bg-[#1b263b] py-20 overflow-hidden">
+    <section className="relative bg-slate-900 py-24 overflow-hidden">
+      {/* Glow effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/10 blur-[120px] rounded-full pointer-events-none" />
+      
       <BlueprintPattern />
-      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-16 text-center">
-        <h2 className="font-heading text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-tight mb-4">
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-16 text-center z-10">
+        <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
           {heading}
         </h2>
-        <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+        <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
           {body}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           {actions.map(({ label, href, variant, external }) => {
             const baseClass =
-              "inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-[4px] text-sm font-bold font-heading tracking-wide transition-colors";
+              "inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold font-heading tracking-wide transition-all duration-300";
             const variantClass =
               variant === "primary"
-                ? "bg-[#e09f3e] text-[#1b263b] hover:bg-[#feb956]"
-                : "border border-white/30 text-white font-semibold hover:bg-white/10";
+                ? "bg-amber-500 text-slate-900 hover:bg-amber-400 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(245,158,11,0.5)]"
+                : "border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/15 hover:border-white/30";
 
             return external ? (
               <a

@@ -2,28 +2,28 @@
 
 @theme {
   /* ── Brand palette ─────────────────────────────────────────────────── */
-  --color-navy:           #1b263b;
-  --color-navy-light:     #415a77;
-  --color-gold:           #e09f3e;
-  --color-gold-light:     #feb956;
-  --color-gold-dim:       #ffddb4;
+  --color-navy:           #0f172a; /* slate-900 */
+  --color-navy-light:     #1e293b; /* slate-800 */
+  --color-gold:           #d97706; /* amber-600 */
+  --color-gold-light:     #f59e0b; /* amber-500 */
+  --color-gold-dim:       #fef3c7; /* amber-100 */
 
   /* ── Surfaces ──────────────────────────────────────────────────────── */
-  --color-surface:               #f8f9ff;
-  --color-surface-low:           #eef4ff;
-  --color-surface-container:     #e5efff;
-  --color-surface-high:          #dbe9ff;
-  --color-on-surface:            #031d34;
-  --color-on-surface-muted:      #514536;
-  --color-outline:               #837564;
-  --color-outline-variant:       #d5c4b1;
+  --color-surface:               #f8fafc; /* slate-50 */
+  --color-surface-low:           #f1f5f9; /* slate-100 */
+  --color-surface-container:     #e2e8f0; /* slate-200 */
+  --color-surface-high:          #cbd5e1; /* slate-300 */
+  --color-on-surface:            #020617; /* slate-950 */
+  --color-on-surface-muted:      #475569; /* slate-600 */
+  --color-outline:               #94a3b8; /* slate-400 */
+  --color-outline-variant:       #e2e8f0; /* slate-200 */
 
   /* ── Font families ─────────────────────────────────────────────────── */
   --font-heading: var(--font-montserrat), Montserrat, system-ui, sans-serif;
   --font-body:    var(--font-inter), Inter, system-ui, sans-serif;
 
   /* ── Border radius ─────────────────────────────────────────────────── */
-  --radius-brand: 4px;
+  --radius-brand: 8px; /* Slightly softer corners for modern feel */
 }
 
 /* ── Base resets ─────────────────────────────────────────────────────────── */
@@ -40,6 +40,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
   }
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ── Utility: font families ──────────────────────────────────────────────── */

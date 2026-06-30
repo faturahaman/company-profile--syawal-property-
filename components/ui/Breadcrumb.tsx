@@ -16,7 +16,7 @@ export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
               {crumb.label}
             </Link>
           ) : (
-            <span className="text-[#e09f3e]" aria-current="page">{crumb.label}</span>
+            <span className="text-amber-500 font-semibold" aria-current="page">{crumb.label}</span>
           )}
         </span>
       ))}

@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="id"
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f8f9ff] text-[#031d34]">
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
